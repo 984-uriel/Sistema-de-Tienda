@@ -6,6 +6,7 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private double precio;
+    private String codigoBarras;
 
     private Categoria categoria;
     private Proveedor proveedor;
@@ -17,6 +18,7 @@ public class Producto {
                     String nombre,
                     String descripcion,
                     double precio,
+                    String codigoBarras,
                     Categoria categoria,
                     Proveedor proveedor) {
 
@@ -24,9 +26,15 @@ public class Producto {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.codigoBarras = codigoBarras;
         this.categoria = categoria;
         this.proveedor = proveedor;
 
+    }
+
+    public Producto(int idProducto, String nombre, String descripcion, double precio,
+                    Categoria categoria, Proveedor proveedor) {
+        this(idProducto, nombre, descripcion, precio, String.valueOf(idProducto), categoria, proveedor);
     }
 
     public int getIdProducto() {
@@ -59,6 +67,14 @@ public class Producto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public String getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
     }
 
     public Categoria getCategoria() {

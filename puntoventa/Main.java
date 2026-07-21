@@ -1,7 +1,8 @@
 package puntoventa;
 
 import puntoventa.controlador.VentaControlador;
-import puntoventa.vista.PuntoVentaFrame;
+import puntoventa.vista.LoginFrame;
+import puntoventa.vista.EstiloVisual;
 
 import javax.swing.SwingUtilities;
 
@@ -9,10 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            PuntoVentaFrame.aplicarEstiloDelSistema();
+            EstiloVisual.aplicar();
             VentaControlador controlador = new VentaControlador();
-            PuntoVentaFrame vista = new PuntoVentaFrame(controlador);
-            vista.setVisible(true);
+            new LoginFrame(controlador).setVisible(true);
         });
     }
 }
